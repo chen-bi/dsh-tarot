@@ -1,4 +1,8 @@
+<p align="center"><img src="assets/banner.svg" alt="dsh-tarot · 命运牌桌" width="100%"></p>
+
 # dsh-tarot · 命运牌桌
+
+> 介绍页：<https://chen-bi.github.io/dsh-tarot/>
 
 在 DSH 里玩塔罗：**你提问 → 助手给牌阵 → 你在聊天里报数字 → 牌桌翻牌 → 助手解牌。**
 

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>dsh-tarot · 命运牌桌</title>
+<meta name="description" content="DSH 塔罗牌插件：侧边栏命运牌桌、78 张韦特牌、6 种牌阵、自动存档。">
+<style>
+  :root {
+    --bg: #0b0918; --panel: #141026; --line: #2a2344;
+    --text: #ece7f8; --muted: #9d94bb; --gold: #d9b36a; --gold-soft: #f6dfa8;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: radial-gradient(900px 500px at 80% -10%, #241a44 0%, var(--bg) 60%);
+    color: var(--text); font: 16px/1.75 "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 72px 22px 96px; }
+  .kicker { color: var(--gold); letter-spacing: .38em; font-size: 12px; text-transform: uppercase; }
+  h1 { font-size: clamp(40px, 7vw, 64px); margin: 10px 0 6px; letter-spacing: .02em; }
+  .sub { color: var(--muted); font-size: 18px; margin: 0 0 26px; }
+  .links { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 46px; }
+  .btn {
+    display: inline-block; padding: 10px 18px; border-radius: 999px; text-decoration: none;
+    border: 1px solid var(--line); color: var(--text); background: var(--panel); font-size: 14px;
+  }
+  .btn.primary { background: linear-gradient(135deg, #3a2d63, #241a44); border-color: #4a3a7d; }
+  .btn:hover { border-color: var(--gold); }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 0 0 44px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 20px 22px; }
+  .card h3 { margin: 0 0 8px; font-size: 17px; color: var(--gold-soft); font-weight: 600; }
+  .card p { margin: 0; color: var(--muted); font-size: 15px; }
+  h2 { font-size: 22px; margin: 46px 0 12px; }
+  h2::before { content: "✦ "; color: var(--gold); }
+  p, li { color: #cfc8e6; }
+  code, pre { font-family: "Cascadia Code", Consolas, monospace; }
+  code { background: #1b1630; border: 1px solid var(--line); border-radius: 6px; padding: 1px 6px; font-size: 13.5px; }
+  pre { background: #0f0c1e; border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; overflow: auto; }
+  pre code { background: none; border: 0; padding: 0; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0 0; font-size: 15px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); }
+  th { color: var(--gold-soft); font-weight: 600; }
+  footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--line); color: #6f6790; font-size: 13px; }
+  a { color: var(--gold-soft); }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <p class="kicker">DeepSeek Harness Plugin</p>
+  <h1>命运牌桌</h1>
+  <p class="sub">在 DSH 里玩塔罗：你提问，助手给牌阵，你在聊天里报数字，牌桌翻开，助手逐张解牌。</p>
+  <p class="links">
+    <a class="btn primary" href="https://github.com/chen-bi/dsh-tarot">GitHub 仓库</a>
+    <a class="btn" href="https://github.com/chen-bi/dsh-tarot#安装">安装说明</a>
+  </p>
+
+  <div class="cards">
+    <div class="card"><h3>两张牌桌，一份数据</h3><p>侧边栏常驻「命运牌桌」，聊天时输入框上方出现小牌桌，牌面实时同步。</p></div>
+    <div class="card"><h3>78 张韦特牌</h3><p>大阿卡纳 + 四组小阿卡纳，正逆位、关键词齐全，原创 SVG 卡面。</p></div>
+    <div class="card"><h3>6 种牌阵</h3><p>单张、时间之流、关系之镜、事业十字、凯尔特十字、是否之间，也可自定义位置。</p></div>
+    <div class="card"><h3>自动存档</h3><p>抽满一局就落盘，含问题、牌阵、牌面与解读，最多保留 200 局。</p></div>
+  </div>
+
+  <h2>安装</h2>
+  <pre><code>git clone https://github.com/chen-bi/dsh-tarot.git</code></pre>
+  <p>然后在 DSH 里让助手装：<code>plugin_manager → install_bundle</code>，target 指向克隆下来的目录。装完刷新一次页面。</p>
+
+  <h2>牌阵</h2>
+  <table>
+    <tr><th>key</th><th>名称</th><th>张数</th></tr>
+    <tr><td>one</td><td>单张指引</td><td>1</td></tr>
+    <tr><td>three</td><td>时间之流</td><td>3</td></tr>
+    <tr><td>love</td><td>关系之镜</td><td>5</td></tr>
+    <tr><td>career</td><td>事业十字</td><td>5</td></tr>
+    <tr><td>celtic</td><td>凯尔特十字</td><td>10</td></tr>
+    <tr><td>yesno</td><td>是否之间</td><td>3</td></tr>
+  </table>
+
+  <h2>怎么用</h2>
+  <ol>
+    <li>跟助手说想问什么：「帮我看看这段感情」「明天面试怎么样」。</li>
+    <li>助手起局，告诉你牌阵和位置，让你在 1–78 里报 N 个数字。</li>
+    <li>牌桌上的牌当场翻开；助手逐张解，最后给结论和建议。</li>
+    <li>说「你帮我抽」让助手代抽，说「收起来」清掉这一局。</li>
+  </ol>
+
+  <footer>dsh-tarot · MIT · <a href="https://github.com/chen-bi/dsh-tarot">github.com/chen-bi/dsh-tarot</a></footer>
+</main>
+</body>
+</html>
