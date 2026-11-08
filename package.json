@@ -1,0 +1,45 @@
+{
+  "name": "dsh-tarot",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "命运牌桌 —— DSH 里的塔罗占卜：助手起局给牌阵，用户在聊天里报数字抽牌，输入框上方的牌桌实时翻牌。",
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "tarot",
+    "divination"
+  ],
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "deck.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [],
+      "external": ["react"],
+      "immediately": true
+    }
+  },
+  "license": "MIT"
+}
